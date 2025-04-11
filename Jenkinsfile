@@ -1,8 +1,12 @@
-stages{
-  agent any 
-  stage('build') {
-    echo "démarrage de l'application"
-    '''sh
-    npm run build'''
+pipeline {
+  agent any
+
+  stages {
+    stage('Build') {
+      steps {
+        echo "Démarrage de l'application"
+        sh 'npm run build'
+      }
+    }
   }
-  }
+}
